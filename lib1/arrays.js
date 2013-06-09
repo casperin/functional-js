@@ -1,7 +1,7 @@
 
 // Just going down this list
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Methods_of_Array_instances
-// and picking off methods I like :)
+// and picking off methods
 //
 //
 

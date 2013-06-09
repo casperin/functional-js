@@ -1,3 +1,4 @@
+// For running quick and dirty tests
 
 var log = function(x){ console.log( x ); }
   , a = [ 1, 2, 3 ]
@@ -17,17 +18,3 @@ var log = function(x){ console.log( x ); }
 
 
 
-log( m );
-log( split( 'n', m ) );
-log( m );
-
-var str = "abcdefghij";
-log("(1,2): "    + str.substr(1,2));
-
-var str = "   foo  ";
- 
-alert(str.length); // 8
-
-str = str.trimLeft();
-alert(str.length); // 5
-document.write( str );
