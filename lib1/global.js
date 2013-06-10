@@ -33,6 +33,14 @@ var root = this
     }.autoCurry()
 
 
+  // Object.toLocaleString()
+  // Number.toLocaleString()
+  // ! optional args
+  , toLocaleString = function( a ){
+      return toLocaleString( a );
+    }
+
+
   // Array.toString()
   // String.toString()
   // Object.toString()

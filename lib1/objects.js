@@ -4,25 +4,20 @@
 var root = this
 
 
-  , hasOwnProperty( prop, o ){
+  , hasOwnProperty = function( prop, o ){
       return o.hasOwnProperty( prop );
     }.autoCurry()
 
 
   // May want to check if this is correct implementation.
-  , isPrototypeOf( a, b ){
+  , isPrototypeOf = function( a, b ){
       return b.isPrototypeOf( a );
     }.autoCurry()
 
 
-  , propertyIsEnumerable( prop, o ){
+  , propertyIsEnumerable = function( prop, o ){
       return o.propertyIsEnumerable( prop );
     }.autoCurry()
-
-
-  , toLocaleString( o ){
-      return toLocaleString( o );
-    }
 
 
   ;
