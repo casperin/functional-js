@@ -1,6 +1,6 @@
 // For running quick and dirty tests
 
-var log = function(x){ console.log( x ); }
+var log = function(x){ console.log( x ); return x; }
   , a = [ 1, 2, 3 ]
   , b = [ 4, 5, 6 ]
   , c = [ 'a', 'b', 'c' ]

@@ -42,3 +42,24 @@ Function.prototype.autoCurry = function(n) {
 };
 
 
+var compose = function() {
+      var funcs = arguments;
+      return function() {
+        var args = arguments,
+            length = funcs.length;
+        while (length--) {
+          args = [funcs[length].apply(this, args)];
+        }
+        return args[0];
+      };
+    }
+
+  , dot = function( param, obj ){
+      return obj[param];
+    }.autoCurry()
+
+  ;
+
+
+
+// partial still missing
