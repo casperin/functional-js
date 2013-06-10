@@ -48,4 +48,4 @@ subXFromFive = sub( 5 );    // partially applied
 log( subXFromFive( 2 ) );   // -> 3
 
 subFiveFromX = sub.flip()( 5 );
-log( subFiveFromX( 2 ) );   // -> 3
+log( subFiveFromX( 2 ) );   // -> 3 (should be -3)

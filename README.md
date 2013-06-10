@@ -29,3 +29,9 @@ var c = addZ( a );
 
 console.log( c ); // =>  [ 1, 2, 3, 'y' ]
 ```
+
+## TODO
+* Make functions that work for arrays work with strings too
+* Add `partial()` to utils.js
+* Figure out how to make a `flip()`
+* Tests

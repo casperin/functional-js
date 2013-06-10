@@ -9,7 +9,19 @@
 var root = this
 
 
-  // Array.pop()  -> Use initial() and last() instead
+  // Array.pop()
+  // Returns last element of array and leaves array intact
+  , pop = function( arr ){
+      var a = arr.slice(0);
+      return a.pop();
+    }
+
+
+  , pop_ = function( arr ){
+      var a = arr.slice(0);
+      a.pop();
+      return a;
+    }
 
 
   // Array.push()
@@ -23,9 +35,26 @@ var root = this
 
 
   // Array.reverse()  -> reverse()
+  // ! Will colide with _.reverse()
+  , reverse = function( arr ){
+      var a = arr.slice(0);
+      return a.reverse();
+    }
 
 
-  // Array.shift()  -> head() and tail()
+  // Array.shift()
+  // Returns first element of array and leaves array intact
+  , shift = function( arr ){
+      var a = arr.slice(0);
+      return a.shift();
+    }
+
+
+  , shift_ = function( arr ){
+      var a = arr.slice(0);
+      a.shift();
+      return a;
+    }
 
 
   // Array.sort()
@@ -57,8 +86,7 @@ var root = this
 
 
   // Array.join()
-  // Implicitly forced separator even though it'd be easy to make it optional
-  // via type checking
+  // Implicitly forced separator
   , join = function( separator, arr ){
       return arr.join( separator );
     }.autoCurry()
