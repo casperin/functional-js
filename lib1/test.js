@@ -19,7 +19,33 @@ var log = function(x){ console.log( x ); }
   ;
 
 
-log( o );
-log( toPrecision( 7, o ) );
-log( o );
+var foo = function( a, b, c ) {
+  console.log( 'a: ' + a );
+  console.log( 'b: ' + b );
+  console.log( 'c: ' + c );
+}.autoCurry();
 
+foo.flip()( 1, 2, 3 );
+log('--');
+foo(1).flip()( 2, 3 );
+log('--');
+
+
+
+// Here's an error
+foo.flip()( 1 )( 2, 3 );
+// What happens is that flip() returns a fn that flips the first two arguments
+// passed to it. Since it is only passed one the first time around, it doesn't
+// actually flip anything.
+
+log('--');
+
+// Better illustration of why it's a problem
+
+sub = function( a, b ) { return a - b }.autoCurry();
+
+subXFromFive = sub( 5 );    // partially applied
+log( subXFromFive( 2 ) );   // -> 3
+
+subFiveFromX = sub.flip()( 5 );
+log( subFiveFromX( 2 ) );   // -> 3
