@@ -35,9 +35,15 @@ var root = this
 
   // Array.toString()
   // String.toString()
+  // Object.toString()
   , toString = function( a ){
       return a.toString();
     }
 
+  // String.valueOf()
+  // Object.value()
+  , valueOf = function( a ){
+      return a.valueOf();
+    }
 
   ; 
