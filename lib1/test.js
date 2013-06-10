@@ -14,7 +14,12 @@ var log = function(x){ console.log( x ); }
   , k = [ 'zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'two' ]
   , l = { one: 1, two: 2, three: 3 }
   , m = 'A longer string'
+  , n = 123456789
+  , o = 12345.6789
   ;
 
 
+log( o );
+log( toPrecision( 7, o ) );
+log( o );
 

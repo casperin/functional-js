@@ -33,11 +33,25 @@ var root = this
     }.autoCurry()
 
 
+  // Object.toLocaleString()
+  // Number.toLocaleString()
+  // ! optional args
+  , toLocaleString = function( a ){
+      return toLocaleString( a );
+    }
+
+
   // Array.toString()
   // String.toString()
+  // Object.toString()
   , toString = function( a ){
       return a.toString();
     }
 
+  // String.valueOf()
+  // Object.value()
+  , valueOf = function( a ){
+      return a.valueOf();
+    }
 
   ; 
