@@ -11,7 +11,7 @@ var a = [ 1, 2, 3 ];
 // To push something onto the array, we'd normally do a.push( 'z' )
 // but then we altered our array. Instead we do...
 
-b = push( 'x', a );
+var b = push( 'x', a );
 
 console.log( b ); // =>  [ 1, 2, 3, 'x' ]
 
@@ -25,7 +25,7 @@ var addZ = push( 'y' );
 // addZ is now a function that takes an array and returns and array with 'y'
 // pushed onto it
 
-c = addZ( a );
+var c = addZ( a );
 
 console.log( c ); // =>  [ 1, 2, 3, 'y' ]
 ```
