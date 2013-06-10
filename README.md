@@ -3,12 +3,29 @@
 
 Collection of methods as curried functions.
 
+Example:
+
 ```javascript
 var a = [ 1, 2, 3 ];
 
-push( 'x', a ); // => [ 1, 2, 3, 'x' ]
+// To push something onto the array, we'd normally do a.push( 'z' )
+// but then we altered our array. Instead we do...
+
+b = push( 'x', a );
+
+console.log( b ); // =>  [ 1, 2, 3, 'x' ]
+
+// a is unaltered
+console.log( a ); // =>  [ 1, 2, 3 ]
+
+// Functions that take multiple arguments can be curried
 
 var addZ = push( 'y' );
 
-addZ( a ); // =>  [ 1, 2, 3, 'y' ]
+// addZ is now a function that takes an array and returns and array with 'y'
+// pushed onto it
+
+c = addZ( a );
+
+console.log( c ); // =>  [ 1, 2, 3, 'y' ]
 ```
