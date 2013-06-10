@@ -24,6 +24,12 @@ var root = this
       return a.lastIndexOf( value );
     }.autoCurry()
 
+
+  // Not a technically a method, but useful still
+  , length = function( a ){
+      return a.length;
+    }
+
   
   // Array.slice()
   // String.slice()
