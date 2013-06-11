@@ -13,7 +13,7 @@ var root = this
     }
 
  , autoCurry = function (fn, numArgs) {
-    numArgs = numArgs || fn.length;
+    numArgs = numArgs || fn.length || fn.length_;
     var f = function () {
       if (arguments.length < numArgs) {
         return numArgs - arguments.length > 0 ?
@@ -26,13 +26,7 @@ var root = this
     };
     f.toString = function(){ return fn.toString(); };
     f.curried = true;
-    f.flip = function() {
-      return function(){
-        var args = toArray(arguments, 0);
-        args = args.slice(1,2).concat(args.slice(0,1)).concat(args.slice(2));
-        return f.apply(this, args);
-      }
-    };
+    f.length_ = numArgs;
     return f;
   }
 
@@ -54,9 +48,22 @@ var compose = function() {
       };
     }
 
+
   , dot = function( param, obj ){
       return obj[param];
     }.autoCurry()
+
+
+  , flip = function( fn ){
+      var numArgs = fn.length || fn.length_ || 0;
+      if( numArgs < 2 ) return fn;
+      var exe = function(){
+        var args = toArray(arguments, 0).reverse();
+        fn.apply( null, args );
+      };
+      return exe;
+    }
+
 
   ;
 

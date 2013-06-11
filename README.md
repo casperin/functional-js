@@ -31,7 +31,7 @@ console.log( c ); // =>  [ 1, 2, 3, 'y' ]
 ```
 
 ## TODO
-- [x] Make functions that work for arrays work with strings too
-- [ ] Add `partial()` to utils.js
-- [ ] Figure out how to make a `flip()`
-- [ ] Tests
+* [x] Make functions that work for arrays work with strings too
+* [ ] Add `partial()` to utils.js
+* [x] Figure out how to make a `flip()` -> slight edits to autoCurry() to make it work properly
+* [ ] Tests

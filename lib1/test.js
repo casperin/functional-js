@@ -18,34 +18,32 @@ var log = function(x){ console.log( x ); return x; }
   , o = 12345.6789
   ;
 
+var foo0 = function() {
+  console.log( 'no args' );
+}.autoCurry();
 
-var foo = function( a, b, c ) {
+var foo1 = function( a ) {
+  console.log( 'a: ' + a );
+}.autoCurry();
+
+var foo2 = function( a, b ) {
+  console.log( 'a: ' + a );
+  console.log( 'b: ' + b );
+}.autoCurry();
+
+var foo3 = function( a, b, c ) {
   console.log( 'a: ' + a );
   console.log( 'b: ' + b );
   console.log( 'c: ' + c );
 }.autoCurry();
 
-foo.flip()( 1, 2, 3 );
-log('--');
-foo(1).flip()( 2, 3 );
-log('--');
+var foo4 = function( a, b, c, d ) {
+  console.log( 'a: ' + a );
+  console.log( 'b: ' + b );
+  console.log( 'c: ' + c );
+  console.log( 'd: ' + d );
+}.autoCurry();
 
+bar = flip( foo4 );
 
-
-// Here's an error
-foo.flip()( 1 )( 2, 3 );
-// What happens is that flip() returns a fn that flips the first two arguments
-// passed to it. Since it is only passed one the first time around, it doesn't
-// actually flip anything.
-
-log('--');
-
-// Better illustration of why it's a problem
-
-sub = function( a, b ) { return a - b }.autoCurry();
-
-subXFromFive = sub( 5 );    // partially applied
-log( subXFromFive( 2 ) );   // -> 3
-
-subFiveFromX = sub.flip()( 5 );
-log( subFiveFromX( 2 ) );   // -> 3 (should be -3)
+bar( 1, 2, 3, 4 );
