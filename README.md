@@ -1,6 +1,6 @@
 # Some functional js
 
-Collection of 43 methods as curried functions.
+Collection of 44 methods as curried functions.
 * Arrays
 * Numbers
 * Objects
@@ -59,3 +59,52 @@ console.log( flippedSub( 1, 2 ) ); // -> 1
 * [ ] Figure out how to make a `flip()`
   * Current implementation is suboptimal since it doesn't work properly with currying
 * [x] Tests
+
+## Full list of functions in lib1
+At the moment there's no real documentation. I suggest looking in the source to see exactly how they behave.
+```javascript
+charAt
+charCodeAt
+concat
+contains
+endsWith
+exec
+hasOwnProperty
+indexOf
+isPrototypeOf
+join
+lastIndexOf
+length
+localCompare
+match
+pop
+pop_
+push
+propertyIsEnumerable
+replace
+reverse
+search
+shift
+shift_
+slice
+sort
+splice
+splice_
+split
+startsWith
+substr
+substring
+test
+toExponential
+toFixed
+toLocaleLowerCase
+toLocaleUpperCase
+toPrecision
+toString
+toUpperCase
+trim
+trimLeft
+trimRight
+unshift
+valueOf
+```

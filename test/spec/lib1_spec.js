@@ -203,6 +203,12 @@ describe("lib1", function() {
   });
 
 
+  it("splice_", function() {
+    expect( splice_( 2 )( 3, f, m ) ).toEqual("A fooger string");
+    expect( splice_( 3, 2 )( g )( [1,2,3,4,5,6,7,8] ) ).toEqual([1, 2, 3, "bar", 6, 7, 8]);
+  });
+
+
   it("split", function() {
     expect( split( "n", m ) ).toEqual(['A lo', 'ger stri', 'g']);
     expect( split( "z", m ) ).toEqual(['A longer string']);

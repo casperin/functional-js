@@ -267,9 +267,6 @@ var root   // Not used
 
 
   // Array.splice()
-  // ! optional args
-  // Just assuming two args and ignoring args that can be added for now. Maybe
-  // having optional args as a list would make sense?
   // Works for strings too
   , splice = function( index, count, a ){
       if( typeof a === 'string' ) {
@@ -277,6 +274,20 @@ var root   // Not used
       }
       var b = a.slice(0);
       b.splice( index, count ); 
+      return b;
+    }.autoCurry()
+
+
+
+  
+  // Array.splice()
+  // Works for strings too
+  , splice_ = function( index, count, value, a ){
+      if( typeof a === 'string' ) {
+        return a.substring( 0, index ) + value + a.substring( index + count );
+      }
+      var b = a.slice(0);
+      b.splice( index, count, value ); 
       return b;
     }.autoCurry()
 
