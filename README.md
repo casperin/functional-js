@@ -1,7 +1,6 @@
-
 # Some functional js
 
-Collection of methods as curried functions.
+Collection of 43 methods as curried functions.
 * Arrays
 * Numbers
 * Objects
