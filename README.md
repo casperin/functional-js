@@ -7,7 +7,6 @@ Collection of methods as curried functions.
 * Objects
 * Regexp
 * Strings
-as autoCurried functions of the same name.
 
 Plus some tools in util.js:
 * curry()
