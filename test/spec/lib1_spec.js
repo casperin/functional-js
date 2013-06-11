@@ -18,11 +18,10 @@ describe("lib1", function() {
 
   it("charAt", function() {
     expect( charAt( 2, f ) ).toEqual('o');
-    expect( charAt( -1, f ) ).toEqual('');
-    expect( charAt( 10, f ) ).toEqual('');
+    expect( charAt( -1, f ) ).toEqual(undefined);
+    expect( charAt( 10, f ) ).toEqual(undefined);
     expect( f ).toEqual('foo');
-    expect( charAt( 10)( f ) ).toEqual('');
-    
+    expect( charAt( 10)( f ) ).toEqual(undefined);
   });
   
 
