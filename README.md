@@ -22,7 +22,7 @@ console.log( a ); // =>  [ 1, 2, 3 ]
 
 var addY = push( 'y' );
 
-// addZ is now a function that takes an array and returns and array with 'y'
+// addY is now a function that takes an array and returns and array with 'y'
 // pushed onto it
 
 var c = addY( a );
