@@ -46,13 +46,9 @@ var root   // Not used
 
   
 
-
   // String.endsWith()
   // ! optional args
   , endsWith = function( value, s){
-      // I am not sure this implementation is right as
-      // contains( 'cde', 'abcdef' );   => true
-      // But it's directly from the polyfill section on mdn
       return s.lastIndexOf( value ) === s.length - value.length;
     }.autoCurry()
 
@@ -207,6 +203,7 @@ var root   // Not used
       var b = a.slice(0);
       return b.reverse();
     }
+
 
 
 
@@ -366,6 +363,7 @@ var root   // Not used
 
 
 
+
   // String.toLocaleUpperCase()
   , toLocaleUpperCase = function( s ){
       return s.toLocaleUpperCase();
@@ -416,6 +414,10 @@ var root   // Not used
   , trimLeft = function( s ){
       return s.trimLeft();
     }
+
+
+
+
   // String.trimRight()
   , trimRight = function( s ){
       return s.trimRight();
@@ -442,6 +444,8 @@ var root   // Not used
   , valueOf = function( a ){
       return a.valueOf();
     }
+
+
 
 
   ; 
