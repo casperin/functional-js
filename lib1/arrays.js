@@ -11,48 +11,67 @@ var root = this
 
   // Array.pop()
   // Returns last element of array and leaves array intact
-  , pop = function( arr ){
-      var a = arr.slice(0);
-      return a.pop();
+  // Works for strings too
+  , pop = function( a){
+      return a[a.length-1];
     }
 
 
-  , pop_ = function( arr ){
-      var a = arr.slice(0);
-      a.pop();
-      return a;
+  // Works for strings too
+  , pop_ = function( a ){
+      if( typeof a === 'string') {
+        var b = a.split('').slice(0);
+        b.pop();
+        return b.join('');
+      }
+      var b = a.slice(0);
+      b.pop();
+      return b;
     }
 
 
   // Array.push()
   // ! optional args
-  , push = function( el, arr ){
+  // Works for strings too
+  , push = function( value, a ){
+      if( typeof a === 'string' ) return a + value;
       // cloning the array
-      var a = arr.slice(0);
-      a.push( el ); 
-      return a;
+      var b = a.slice(0);
+      b.push( value ); 
+      return b;
     }.autoCurry()
 
 
   // Array.reverse()  -> reverse()
   // ! Will colide with _.reverse()
-  , reverse = function( arr ){
-      var a = arr.slice(0);
-      return a.reverse();
+  // Works for strings too
+  , reverse = function( a ){
+      if( typeof a === 'string' ) {
+        var b = a.split('').slice(0);
+        return b.reverse().join('');
+      }
+      var b = a.slice(0);
+      return b.reverse();
     }
 
 
   // Array.shift()
   // Returns first element of array and leaves array intact
+  // Works for strings too
   , shift = function( arr ){
-      var a = arr.slice(0);
-      return a.shift();
+      return arr[0];
     }
 
 
-  , shift_ = function( arr ){
-      var a = arr.slice(0);
-      a.shift();
+  // Works for strings too
+  , shift_ = function( a ){
+      if( typeof a === 'string' ) {
+        var b = a.split('').slice(0);
+        b.shift();
+        return b.join('');
+      }
+      var b = a.slice(0);
+      b.shift();
       return a;
     }
 
@@ -60,8 +79,12 @@ var root = this
   // Array.sort()
   // ! optional args
   // Ignoring optional args because of `sortBy()`
-  , sort = function( arr ){
-      return arr.slice(0).sort();
+  // Works for strings too... but... why?
+  , sort = function( a ){
+      if( typeof a === 'string' ) {
+        return a.split('').slice(0).sort().join('');
+      }
+      return a.slice(0).sort();
     }
 
 
@@ -69,30 +92,34 @@ var root = this
   // ! optional args
   // Just assuming two args and ignoring args that can be added for now. Maybe
   // having optional args as a list would make sense?
-  , splice = function( index, count, arr ){
-      var a = arr.slice(0);
-      a.splice( index, count ); 
-      return a;
+  // Works for strings too
+  , splice = function( index, count, a ){
+      if( typeof a === 'string' ) {
+        return a.substring( 0, index ) + a.substring( index + count );
+      }
+      var b = a.slice(0);
+      b.splice( index, count ); 
+      return b;
     }.autoCurry()
 
   
   // Array.unshift()
   // ! optional args
-  , unshift = function( el, arr ){
-      var a = arr.slice(0);
-      a.unshift( el ); 
-      return a;
+  // Works for strings too
+  , unshift = function( value, a ){
+      if( typeof a === 'string' ) return value + a;
+      var b = a.slice(0);
+      b.unshift( value ); 
+      return b;
     }.autoCurry()
 
 
   // Array.join()
   // Implicitly forced separator
+  // Not sure what this would do to strings. Add a separator between each char?
   , join = function( separator, arr ){
       return arr.join( separator );
     }.autoCurry()
-
-
-  // Array.toSource() -> Skipping this
 
 
   ;
