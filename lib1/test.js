@@ -19,3 +19,5 @@ var log = function(x){ console.log( x ); return x; }
   ;
 
 
+log( charAt( 4, m ) );
+

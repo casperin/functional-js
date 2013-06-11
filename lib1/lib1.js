@@ -13,14 +13,16 @@ var root   // Not used
 
 
   // String.charAt()
+  // charAt :: int -> string -> char
   , charAt = function( i, s ){
-      return s.charAt( i );
+      return s[i];
     }.autoCurry()
 
 
 
 
   // String.charCodeAt()
+  // charCodeAt :: int -> string -> int
   , charCodeAt = function( i, s ){
       return s.charCodeAt( i );
     }.autoCurry()
@@ -39,8 +41,7 @@ var root   // Not used
 
   // String.contains()
   , contains = function( value, s ){
-      // while we wait for a .contains() method
-      return -1 !== s.indexOf( value );
+      return s.indexOf( value ) !== -1;
     }.autoCurry()
 
 
