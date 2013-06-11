@@ -18,32 +18,5 @@ var log = function(x){ console.log( x ); return x; }
   , o = 12345.6789
   ;
 
-var foo0 = function() {
-  console.log( 'no args' );
-}.autoCurry();
 
-var foo1 = function( a ) {
-  console.log( 'a: ' + a );
-}.autoCurry();
 
-var foo2 = function( a, b ) {
-  console.log( 'a: ' + a );
-  console.log( 'b: ' + b );
-}.autoCurry();
-
-var foo3 = function( a, b, c ) {
-  console.log( 'a: ' + a );
-  console.log( 'b: ' + b );
-  console.log( 'c: ' + c );
-}.autoCurry();
-
-var foo4 = function( a, b, c, d ) {
-  console.log( 'a: ' + a );
-  console.log( 'b: ' + b );
-  console.log( 'c: ' + c );
-  console.log( 'd: ' + d );
-}.autoCurry();
-
-bar = flip( foo4 );
-
-bar( 1, 2, 3, 4 );
