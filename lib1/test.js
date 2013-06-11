@@ -49,7 +49,3 @@ log( subXFromFive( 2 ) );   // -> 3
 
 subFiveFromX = sub.flip()( 5 );
 log( subFiveFromX( 2 ) );   // -> 3 (should be -3)
-
-log( m );
-log( slice( 6, 8, m ) );
-log( m );
