@@ -13,14 +13,16 @@ var root   // Not used
 
 
   // String.charAt()
+  // charAt :: int -> string -> char
   , charAt = function( i, s ){
-      return s.charAt( i );
+      return s[i];
     }.autoCurry()
 
 
 
 
   // String.charCodeAt()
+  // charCodeAt :: int -> string -> int
   , charCodeAt = function( i, s ){
       return s.charCodeAt( i );
     }.autoCurry()
@@ -39,20 +41,15 @@ var root   // Not used
 
   // String.contains()
   , contains = function( value, s ){
-      // while we wait for a .contains() method
-      return -1 !== s.indexOf( value );
+      return s.indexOf( value ) !== -1;
     }.autoCurry()
 
 
   
 
-
   // String.endsWith()
   // ! optional args
   , endsWith = function( value, s){
-      // I am not sure this implementation is right as
-      // contains( 'cde', 'abcdef' );   => true
-      // But it's directly from the polyfill section on mdn
       return s.lastIndexOf( value ) === s.length - value.length;
     }.autoCurry()
 
@@ -207,6 +204,7 @@ var root   // Not used
       var b = a.slice(0);
       return b.reverse();
     }
+
 
 
 
@@ -406,6 +404,10 @@ var root   // Not used
   , trimLeft = function( s ){
       return s.trimLeft();
     }
+
+
+
+
   // String.trimRight()
   , trimRight = function( s ){
       return s.trimRight();
@@ -432,6 +434,8 @@ var root   // Not used
   , valueOf = function( a ){
       return a.valueOf();
     }
+
+
 
 
   ; 
