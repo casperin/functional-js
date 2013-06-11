@@ -60,7 +60,7 @@ var root   // Not used
 
 
   // Regexp.exec()
-  , exec = function( str, r ){
+  , exec = function( r, str ){
       return r.exec( str );
     }.autoCurry()
 
@@ -88,7 +88,7 @@ var root   // Not used
   // Object.isPrototypeOf()
   // May want to check if this is correct implementation.
   , isPrototypeOf = function( a, b ){
-      return b.isPrototypeOf( a );
+      return a.prototype.isPrototypeOf( b );
     }.autoCurry()
 
 
@@ -238,7 +238,7 @@ var root   // Not used
       }
       var b = a.slice(0);
       b.shift();
-      return a;
+      return b;
     }
 
 
@@ -297,7 +297,6 @@ var root   // Not used
 
   // String.startsWith()
   , startsWith = function( value, s ){
-      // polyfill
       return s.indexOf( value ) === 0; 
     }.autoCurry()
   
@@ -322,7 +321,7 @@ var root   // Not used
 
   // Regexp.test()
   // Overly conflicting name?
-  , test = function( str, r ){
+  , test = function( r, str ){
       return r.test( str );
     }.autoCurry()
 
@@ -354,15 +353,6 @@ var root   // Not used
       return s.toLocaleLowerCase();
     }
 
-
-
-
-  // Object.toLocaleString()
-  // Number.toLocaleString()
-  // ! optional args
-  , toLocaleString = function( a ){
-      return toLocaleString( a );
-    }
 
 
 
@@ -438,7 +428,7 @@ var root   // Not used
 
 
   // String.valueOf()
-  // Object.value()
+  // Object.valueOf()
   , valueOf = function( a ){
       return a.valueOf();
     }

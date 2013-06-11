@@ -18,11 +18,3 @@ var log = function(x){ console.log( x ); return x; }
   , o = 12345.6789
   ;
 
-var foo = function( a, b ){
-  console.log( a );
-  console.log( b );
-}
-
-bar = flip( foo );
-
-bar( 1, 2, 3 );
