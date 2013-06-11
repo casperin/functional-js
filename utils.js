@@ -56,7 +56,7 @@ var compose = function() {
   , flip = function( fn ){
       return function(){
         var args = toArray(arguments, 0).reverse();
-        fn.apply( null, args );
+        return fn.apply( null, args );
       };
     }
 
