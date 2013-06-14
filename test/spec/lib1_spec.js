@@ -129,24 +129,6 @@ describe("lib1", function() {
   });
 
 
-  it("pop", function() {
-    expect( pop( a ) ).toEqual( 3 );
-    expect( pop( m ) ).toEqual( 'g' );
-  });
-
-
-  it("pop_", function() {
-    expect( pop_( a ) ).toEqual( [1,2] );
-    expect( pop_( m ) ).toEqual( 'A longer strin' );
-  });
-
-
-  it("push", function() {
-    expect( push( 'z' )( a ) ).toEqual([1,2,3,'z']);
-    expect( push( 'z' )( f ) ).toEqual('fooz');
-  });
-
-
   it("propertyIsEnumerable", function() {
     expect( propertyIsEnumerable( 0, c ) ).toEqual(true);
     expect( propertyIsEnumerable( 'foo', c ) ).toEqual(false);
@@ -161,51 +143,15 @@ describe("lib1", function() {
   });
 
 
-  it("reverse", function() {
-    expect( reverse( a ) ).toEqual([3,2,1]);
-    expect( reverse( f ) ).toEqual('oof');
-  });
-
-
   it("search", function() {
     expect( search( /hello/gi, "Hello world" ) ).toEqual(0);
     expect( search( /hello/g, "Hello world" ) ).toEqual(-1);
   });
 
 
-  it("shift", function() {
-    expect( shift( a ) ).toEqual( 1 ); 
-    expect( shift( f ) ).toEqual('f'); 
-  });
-
-
-  it("shift_", function() {
-    expect( shift_( a ) ).toEqual( [2,3] ); 
-    expect( shift_( f ) ).toEqual( 'oo' ); 
-  });
-
-
   it("slice", function() {
     expect( slice( 2 )( 4 )( m ) ).toEqual('lo');
     expect( slice( 4, 6 )( k ) ).toEqual(['four','five']);
-  });
-
-
-  it("sort", function() {
-    expect( sort( m ) ).toEqual("  Aeggilnnorrst");
-    expect( sort( i ) ).toEqual(["CHARLIE", "Delta", "alpha", "bravo"]);
-  });
-
-
-  it("splice", function() {
-    expect( splice( 2 )( 3, m ) ).toEqual("A ger string");
-    expect( splice( 3, 6 )( j ) ).toEqual([0,1,2,9]);
-  });
-
-
-  it("splice_", function() {
-    expect( splice_( 2 )( 3, f, m ) ).toEqual("A fooger string");
-    expect( splice_( 3, 2 )( g )( [1,2,3,4,5,6,7,8] ) ).toEqual([1, 2, 3, "bar", 6, 7, 8]);
   });
 
 
@@ -286,12 +232,6 @@ describe("lib1", function() {
   });
   it("trimRight", function(){
     expect( true ).toEqual( true ); // very unsupported
-  });
-
-
-  it("unshift", function() {
-    expect( unshift( 'z', a ) ).toEqual(['z',1,2,3]);
-    expect( unshift( 'z', f ) ).toEqual('zfoo');
   });
 
 
