@@ -16,5 +16,26 @@ var log = function(x){ console.log( x ); return x; }
   , m = 'A longer string'
   , n = 123456789
   , o = 12345.6789
-  ;
+  , p = [{
+   "h_id": "3",
+   "city": "Dallas",
+   "state": "TX",
+   "zip": "75201",
+   "price": "162500",
+   "n": 2
+}, {
+   "h_id": "4",
+   "city": "Bevery Hills",
+   "state": "CA",
+   "zip": "90210",
+   "price": "319250",
+   "n": 100
+}, {
+   "h_id": "5",
+   "city": "New York",
+   "state": "NY",
+   "zip": "00010",
+   "price": "962500",
+   "n": 4
+}];
 

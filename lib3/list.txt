@@ -1,0 +1,119 @@
+
+Arrays
+compact
+difference :: [a] -> [a] -> [a]
+    drop :: int -> [a] -> [a]
+    findIndex ( fn, arr ) :: String|(a -> bool) -> [a] -> int
+    first ( arr ) :: [a] -> a
+flatten :: [[a]] -> [a]
+flattenDeep :: [[[a]]] -> [a]
+    indexOf (indexOf_ for sorted) // TODO: fromIndex is weird
+initial (?)   //TODO: find alternate function for extra behavior
+intersection 
+    last
+lastIndexOf  // TODO: fromIndex is weird
+object (instance of zippable?)
+range (stepRange_)
+    rest
+restBy
+sortedIndex (?)
+    take (only 2 args)
+union // TODO: tests
+uniq (also uniqBy  uniq_)
+without
+zip
+
+
+Collections
+at
+contains
+countBy
+every
+    filter
+find
+forEach
+groupBy
+    map
+    max
+    min
+    pluck // TODO: tests
+reduce
+reduceRight
+reject
+shuffle
+size
+some
+    sortBy
+toArray
+where
+
+
+Functions
+after (???)
+bind 
+bindAll
+bindKey
+    compose :: (a) -> (a) -> … -> (a)
+createCallback (???)
+debounce (???)
+defer (???)
+delay (settimeout)
+memoize :: (a) -> (a)
+once :: (a) -> (a)
+partial
+partialRight
+throttle (???) -frp
+wrap :: (a) -> a -> (a)
+
+
+Objects
+assign :: {a} -> {a} -> {a}
+clone :: a -> a
+cloneDeep :: a -> a
+defaults :: {a} -> {a} -> {a}
+findKey :: (a -> Bool) -> {a} -> a
+forIn :: (a) -> {a} -> {a}
+forOwn  :: (a) -> {a} -> {a}
+functions :: {a} -> [a]
+has :: a -> a -> Bool
+invert :: {a} -> {a}
+isArguments :: a -> Bool
+isArray :: a -> Bool
+isBoolean :: a -> Bool
+isDate :: a -> Bool
+isElement :: a -> Bool
+isEmpty :: a -> Bool
+isEqual :: a -> a -> Bool
+isFinite :: a -> Bool
+isFunction :: a -> Bool
+isNaN :: a -> Bool
+isNull :: a -> Bool
+isNumber :: a -> Bool
+isObject :: a -> Bool
+isPlainObject :: a -> Bool
+isRegExp :: a -> Bool
+isString :: a -> Bool
+isUndefined :: a -> Bool
+keys :: {a} -> [a]
+merge :: {a} -> {a} -> {a}
+omit :: (a -> Boolean) -> {a} -> {a}
+pairs :: {a} -> [a]
+pick :: (a -> Boolean) -> {a} -> {a}
+values :: {a} -> [a]
+
+
+Utilities
+escape :: a -> a
+identity :: a -> a
+id
+noConflict :: ???
+parseInt :: string -> int
+parseIntRadix :: int -> string -> int
+random :: int -> int -> int
+random( min, max )
+result :: a -> [a] -> a
+times :: int -> (a) -> [b]
+unescape :: a -> a
+uniqueId :: -> a
+uniqueIdPrefix :: a -> b
+
