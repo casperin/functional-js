@@ -190,6 +190,19 @@ var root
 
 
 
+  , range = function(start, stop) {
+      return rangeStep( start, stop, 1 );
+    }.autoCurry(2)
 
 
 
+  , rangeStep = function(start, stop, step) {
+      var len = Math.max(Math.ceil((stop - start) / step), 0);
+      var idx = 0;
+      var range = new Array(len);
+      while(idx < len) {
+        range[idx++] = start;
+        start += step;
+      }
+      return range;
+    }.autoCurry(3)

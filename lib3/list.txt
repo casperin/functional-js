@@ -13,7 +13,8 @@ intersection
     last
 lastIndexOf  // TODO: fromIndex is weird
 object (instance of zippable?)
-range (stepRange_)
+    range
+    rangeStep
     rest
 restBy
 sortedIndex (?)
