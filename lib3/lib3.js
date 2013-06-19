@@ -45,6 +45,18 @@ Function.prototype.autoCurry = function(n) {
 var root
 
 
+
+  , compact = function( array ) {
+      var results = [],
+          arr = array.slice(0);
+      for( var i = 0, l = arr.length; i < l; i++ ) {
+        if( !!arr[i] ) results.push( arr[i] );
+      }
+      return results;
+    }
+
+
+
   , indexOf = function(value, array) {
       var index = -1,
           length = array.length;
@@ -99,7 +111,7 @@ var root
       } else {
         for (var key in x) {
           if(x.hasOwnProperty(key)){
-          if ( fn(x[key]) ) results.push( x[key] );
+            if ( fn(x[key]) ) results.push( x[key] );
           }
         }
       }
@@ -114,10 +126,10 @@ var root
 
 
 
-  , sortBy = function( value, array ) {
+  , sortBy = function( fn, array ) {
       return array.slice(0).sort(function(a,b) {
-        if (a[value] < b[value]) return -1;
-        if (a[value] > b[value]) return 1;
+        if (fn(a) < fn(b)) return -1;
+        if (fn(a) > fn(b)) return 1;
         return 0;
       });
     }.autoCurry(2)

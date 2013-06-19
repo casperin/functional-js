@@ -1,6 +1,6 @@
 
 Arrays
-compact
+    compact
 difference :: [a] -> [a] -> [a]
     drop :: int -> [a] -> [a]
     findIndex ( fn, arr ) :: String|(a -> bool) -> [a] -> int
