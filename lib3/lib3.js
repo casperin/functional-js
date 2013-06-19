@@ -1,4 +1,55 @@
+// Type system of some sort
+//
+// Ex.
+//
+// a = [1, 2, 3]
+//
+// will throw an error if a is not an array
+// a = t.arr( a )
+//
+// will throw an error if a is not an array of numbers
+// a = t.arrOf(t.num)( a )
+//
+var t = (function(){
 
+  var t = {}
+
+  var typeOf = t.typeOf = function(type) {
+    return function(p) {
+      if (typeof p !== type) {
+        throw new Error("Expected " + type + ". Got " + p);
+      }
+      return p;
+    };
+  };
+
+  t.str = typeOf('string');
+  t.num = typeOf('number');
+  t.obj = typeOf('object');
+  t.bool = typeOf('boolean');
+  t.func = typeOf('function');
+
+  var arr = t.arr = function(a) {
+    if (Object.prototype.toString.call(a) !== "[object Array]") {
+      throw new Error("Expected array, got " + a);
+    }
+    return a;
+  };
+
+  t.arrOf = function(c) {
+    return function(a) {
+      return map( c, arr(a) );
+    };
+  };
+
+  return t;
+
+})();
+
+
+
+
+// Curry
 
 var slice = Array.prototype.slice
   
